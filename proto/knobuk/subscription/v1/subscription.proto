@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package knobuk.subscription.v1;
+
+import "knobuk/common/v1/envelope.proto";
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/subscription/v1;subscriptionv1";
+
+message SubscriptionPlan {
+  string id = 1;
+  string name = 2;
+  string code = 3;
+  double price = 4;
+  string currency = 5;
+  int32 duration_days = 6;
+  bool is_active = 7;
+}
+
+message UserSubscription {
+  string id = 1;
+  string user_id = 2;
+  string plan_id = 3;
+  SubscriptionPlan plan = 4;
+  string status = 5;
+  string starts_at = 6;
+  string expires_at = 7;
+  string payment_id = 8;
+}
+
+message ListPlansResponse {
+  repeated SubscriptionPlan plans = 1;
+}
+
+message GetPlanRequest {
+  string plan_id = 1;
+}
+
+message ActivateRequest {
+  string user_id = 1;
+  string plan_id = 2;
+  string payment_id = 3;
+}
+
+message UserRequest {
+  string user_id = 1;
+}
+
+message MeResponse {
+  bool active = 1;
+  UserSubscription current = 2;
+  repeated UserSubscription history = 3;
+}
+
+message HasActiveResponse {
+  bool active = 1;
+}
+
+message ListSubscriptionsRequest {
+  int32 page = 1;
+  int32 size = 2;
+}
+
+message ListSubscriptionsResponse {
+  repeated UserSubscription subscriptions = 1;
+  knobuk.common.v1.Pagination pagination = 2;
+}
+
+service SubscriptionService {
+  rpc ListPlans(knobuk.common.v1.Empty) returns (ListPlansResponse);
+  rpc GetPlan(GetPlanRequest) returns (SubscriptionPlan);
+  rpc Activate(ActivateRequest) returns (UserSubscription);
+  rpc HasActive(UserRequest) returns (HasActiveResponse);
+  rpc Me(UserRequest) returns (MeResponse);
+  rpc AdminList(ListSubscriptionsRequest) returns (ListSubscriptionsResponse);
+}

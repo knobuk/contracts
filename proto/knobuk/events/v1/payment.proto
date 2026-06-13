@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package knobuk.events.v1;
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/events/v1;eventsv1";
+
+message PaymentFulfilled {
+  string payment_reference = 1;
+  string user_id = 2;
+  string purpose = 3;
+  string order_id = 4;
+  string plan_id = 5;
+  double amount = 6;
+  string currency = 7;
+  string paid_at = 8;
+}
+
+message OrderCompleted {
+  string order_id = 1;
+  string user_id = 2;
+  string kind = 3;
+}

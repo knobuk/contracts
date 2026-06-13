@@ -1,0 +1,136 @@
+syntax = "proto3";
+
+package knobuk.catalog.v1;
+
+import "knobuk/common/v1/envelope.proto";
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/catalog/v1;catalogv1";
+
+message Category {
+  string id = 1;
+  string name = 2;
+  string slug = 3;
+  string description = 4;
+  string parent_id = 5;
+  bool is_active = 6;
+}
+
+message BookFormat {
+  string id = 1;
+  string format = 2;
+  string file_key = 3;
+  double price = 4;
+  bool is_available = 5;
+  bool is_subscription_accessible = 6;
+  bool preview_enabled = 7;
+  int32 preview_limit = 8;
+}
+
+message BookInventory {
+  string id = 1;
+  int32 stock_quantity = 2;
+  double price = 3;
+  bool is_available = 4;
+}
+
+message Book {
+  string id = 1;
+  string title = 2;
+  string slug = 3;
+  string description = 4;
+  string isbn = 5;
+  string language = 6;
+  string publisher = 7;
+  string publication_date = 8;
+  string cover_key = 9;
+  string author_profile_id = 10;
+  string status = 11;
+  bool is_featured = 12;
+  repeated BookFormat formats = 13;
+  BookInventory inventory = 14;
+  repeated Category categories = 15;
+  string created_at = 16;
+  string subtitle = 17;
+  repeated string tags = 18;
+  double digital_price = 19;
+  bool summary_enabled = 20;
+  bool audio_enabled = 21;
+}
+
+message ListCategoriesRequest {
+  bool active_only = 1;
+}
+
+message ListCategoriesResponse {
+  repeated Category categories = 1;
+}
+
+message ListBooksRequest {
+  int32 page = 1;
+  int32 size = 2;
+  string search = 3;
+  string category = 4;
+  string format = 5;
+  bool featured = 6;
+  string status = 7;
+}
+
+message ListBooksResponse {
+  repeated Book books = 1;
+  knobuk.common.v1.Pagination pagination = 2;
+}
+
+message GetBookBySlugRequest {
+  string slug = 1;
+}
+
+message GetBookByIdRequest {
+  string book_id = 1;
+}
+
+message CreateBookRequest {
+  Book book = 1;
+  repeated string category_ids = 2;
+}
+
+message UpdateBookRequest {
+  string book_id = 1;
+  Book book = 2;
+  repeated string category_ids = 3;
+}
+
+message SetBookStatusRequest {
+  string book_id = 1;
+  string status = 2;
+  string admin_id = 3;
+}
+
+message DecrementStockRequest {
+  string book_id = 1;
+  int32 quantity = 2;
+}
+
+message CreateCategoryRequest {
+  Category category = 1;
+}
+
+message UpdateCategoryRequest {
+  string category_id = 1;
+  Category category = 2;
+}
+
+service CatalogService {
+  rpc ListCategories(ListCategoriesRequest) returns (ListCategoriesResponse);
+  rpc ListBooks(ListBooksRequest) returns (ListBooksResponse);
+  rpc GetFeatured(knobuk.common.v1.Empty) returns (ListBooksResponse);
+  rpc GetTrending(knobuk.common.v1.Empty) returns (ListBooksResponse);
+  rpc GetBookBySlug(GetBookBySlugRequest) returns (Book);
+  rpc GetBookById(GetBookByIdRequest) returns (Book);
+  rpc CreateBook(CreateBookRequest) returns (Book);
+  rpc UpdateBook(UpdateBookRequest) returns (Book);
+  rpc SetBookStatus(SetBookStatusRequest) returns (Book);
+  rpc DeleteBook(GetBookByIdRequest) returns (knobuk.common.v1.Empty);
+  rpc DecrementStock(DecrementStockRequest) returns (knobuk.common.v1.Empty);
+  rpc CreateCategory(CreateCategoryRequest) returns (Category);
+  rpc UpdateCategory(UpdateCategoryRequest) returns (Category);
+}

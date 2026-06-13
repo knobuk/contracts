@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package knobuk.notifications.v1;
+
+import "knobuk/common/v1/envelope.proto";
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/notifications/v1;notificationsv1";
+
+enum EventType {
+  EVENT_TYPE_UNSPECIFIED = 0;
+  ORDER_CREATED = 1;
+  PAYMENT_SUCCESS = 2;
+  ORDER_SHIPPED = 3;
+  ORDER_DELIVERED = 4;
+  BOOK_APPROVED = 5;
+  BOOKSTORE_APPROVED = 6;
+  AUTHOR_APPROVED = 7;
+  SUBSCRIPTION_ACTIVATED = 8;
+  DIGITAL_ACCESS_GRANTED = 9;
+}
+
+message Notification {
+  string id = 1;
+  string user_id = 2;
+  string event_type = 3;
+  string title = 4;
+  string body = 5;
+  string reference_id = 6;
+  bool is_read = 7;
+  string created_at = 8;
+}
+
+message CreateRequest {
+  string user_id = 1;
+  string event_type = 2;
+  string title = 3;
+  string body = 4;
+  string reference_id = 5;
+}
+
+message ListRequest {
+  string user_id = 1;
+  int32 page = 2;
+  int32 size = 3;
+  bool unread_only = 4;
+}
+
+message ListResponse {
+  repeated Notification notifications = 1;
+  knobuk.common.v1.Pagination pagination = 2;
+  int64 unread_count = 3;
+}
+
+message MarkReadRequest {
+  string user_id = 1;
+  string notification_id = 2;
+}
+
+service NotificationService {
+  rpc Create(CreateRequest) returns (Notification);
+  rpc List(ListRequest) returns (ListResponse);
+  rpc MarkRead(MarkReadRequest) returns (Notification);
+}

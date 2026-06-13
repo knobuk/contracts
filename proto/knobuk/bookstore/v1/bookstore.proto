@@ -1,0 +1,246 @@
+syntax = "proto3";
+
+package knobuk.bookstore.v1;
+
+import "knobuk/catalog/v1/catalog.proto";
+import "knobuk/commerce/v1/commerce.proto";
+import "knobuk/common/v1/envelope.proto";
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/bookstore/v1;bookstorev1";
+
+message Bookstore {
+  string id = 1;
+  string owner_user_id = 2;
+  string name = 3;
+  string slug = 4;
+  string description = 5;
+  string logo_key = 6;
+  string email = 7;
+  string phone = 8;
+  string country = 9;
+  string state = 10;
+  string city = 11;
+  string address = 12;
+  string status = 13;
+  string approved_at = 14;
+  string approved_by = 15;
+  string created_at = 16;
+  string updated_at = 17;
+}
+
+message BookstoreInventory {
+  string id = 1;
+  string bookstore_id = 2;
+  string book_id = 3;
+  string format = 4;
+  double price = 5;
+  double compare_at_price = 6;
+  int32 stock_quantity = 7;
+  int32 reserved_quantity = 8;
+  int32 low_stock_threshold = 9;
+  bool is_active = 10;
+  string delivery_note = 11;
+  string book_title = 12;
+  string book_slug = 13;
+  string bookstore_name = 14;
+  string bookstore_city = 15;
+  string created_at = 16;
+  string updated_at = 17;
+}
+
+message ApplyRequest {
+  string user_id = 1;
+  string name = 2;
+  string description = 3;
+  string logo_key = 4;
+  string email = 5;
+  string phone = 6;
+  string country = 7;
+  string state = 8;
+  string city = 9;
+  string address = 10;
+}
+
+message UpdateProfileRequest {
+  string user_id = 1;
+  string name = 2;
+  string description = 3;
+  string logo_key = 4;
+  string email = 5;
+  string phone = 6;
+  string country = 7;
+  string state = 8;
+  string city = 9;
+  string address = 10;
+}
+
+message GetProfileRequest {
+  string user_id = 1;
+}
+
+message GetBySlugRequest {
+  string slug = 1;
+}
+
+message ListApplicationsRequest {
+  string status = 1;
+  int32 page = 2;
+  int32 size = 3;
+}
+
+message ListApplicationsResponse {
+  repeated Bookstore bookstores = 1;
+  knobuk.common.v1.Pagination pagination = 2;
+}
+
+message ApproveRejectRequest {
+  string bookstore_id = 1;
+  string admin_id = 2;
+}
+
+message DashboardMetrics {
+  int64 total_inventory = 1;
+  int64 total_orders = 2;
+  int64 pending_orders = 3;
+  int64 fulfilled_orders = 4;
+  double revenue_estimate = 5;
+}
+
+message SearchCatalogRequest {
+  string user_id = 1;
+  string search = 2;
+  int32 page = 3;
+  int32 size = 4;
+}
+
+message SearchCatalogResponse {
+  repeated knobuk.catalog.v1.Book books = 1;
+  knobuk.common.v1.Pagination pagination = 2;
+}
+
+message AddInventoryRequest {
+  string user_id = 1;
+  string book_id = 2;
+  double price = 3;
+  double compare_at_price = 4;
+  int32 stock_quantity = 5;
+  int32 low_stock_threshold = 6;
+  string delivery_note = 7;
+}
+
+message UpdateInventoryRequest {
+  string user_id = 1;
+  string inventory_id = 2;
+  double price = 3;
+  double compare_at_price = 4;
+  int32 stock_quantity = 5;
+  int32 low_stock_threshold = 6;
+  bool is_active = 7;
+  string delivery_note = 8;
+}
+
+message ListInventoryRequest {
+  string user_id = 1;
+  int32 page = 2;
+  int32 size = 3;
+}
+
+message ListInventoryResponse {
+  repeated BookstoreInventory items = 1;
+  knobuk.common.v1.Pagination pagination = 2;
+}
+
+message ListInventoryByBookRequest {
+  string book_id = 1;
+}
+
+message ListInventoryByBookResponse {
+  repeated BookstoreInventory items = 1;
+}
+
+message InventoryIDRequest {
+  string inventory_id = 1;
+}
+
+message ValidateStockRequest {
+  string inventory_id = 1;
+  int32 quantity = 2;
+}
+
+message ValidateStockResponse {
+  bool available = 1;
+  double unit_price = 2;
+  string bookstore_id = 3;
+  string book_id = 4;
+}
+
+message ReserveStockRequest {
+  string inventory_id = 1;
+  int32 quantity = 2;
+}
+
+message ReleaseReservationRequest {
+  string inventory_id = 1;
+  int32 quantity = 2;
+}
+
+message DecrementInventoryRequest {
+  string inventory_id = 1;
+  int32 quantity = 2;
+}
+
+message ListOrdersRequest {
+  string user_id = 1;
+  int32 page = 2;
+  int32 size = 3;
+  string status = 4;
+}
+
+message ListOrdersResponse {
+  repeated knobuk.commerce.v1.Order orders = 1;
+  knobuk.common.v1.Pagination pagination = 2;
+}
+
+message GetOrderRequest {
+  string user_id = 1;
+  string order_id = 2;
+}
+
+message UpdateFulfillmentRequest {
+  string user_id = 1;
+  string order_id = 2;
+  string status = 3;
+}
+
+message AdminListInventoryRequest {
+  int32 page = 1;
+  int32 size = 2;
+}
+
+service BookstoreService {
+  rpc Apply(ApplyRequest) returns (Bookstore);
+  rpc GetMe(GetProfileRequest) returns (Bookstore);
+  rpc GetBySlug(GetBySlugRequest) returns (Bookstore);
+  rpc UpdateMe(UpdateProfileRequest) returns (Bookstore);
+  rpc RequireApproved(GetProfileRequest) returns (Bookstore);
+  rpc ListApplications(ListApplicationsRequest) returns (ListApplicationsResponse);
+  rpc ListBookstores(ListApplicationsRequest) returns (ListApplicationsResponse);
+  rpc Approve(ApproveRejectRequest) returns (Bookstore);
+  rpc Reject(ApproveRejectRequest) returns (Bookstore);
+  rpc Suspend(ApproveRejectRequest) returns (Bookstore);
+  rpc Dashboard(GetProfileRequest) returns (DashboardMetrics);
+  rpc SearchCatalog(SearchCatalogRequest) returns (SearchCatalogResponse);
+  rpc AddInventory(AddInventoryRequest) returns (BookstoreInventory);
+  rpc UpdateInventory(UpdateInventoryRequest) returns (BookstoreInventory);
+  rpc ListInventory(ListInventoryRequest) returns (ListInventoryResponse);
+  rpc ListInventoryByBook(ListInventoryByBookRequest) returns (ListInventoryByBookResponse);
+  rpc GetInventory(InventoryIDRequest) returns (BookstoreInventory);
+  rpc ValidateStock(ValidateStockRequest) returns (ValidateStockResponse);
+  rpc ReserveStock(ReserveStockRequest) returns (knobuk.common.v1.Empty);
+  rpc ReleaseReservation(ReleaseReservationRequest) returns (knobuk.common.v1.Empty);
+  rpc DecrementInventory(DecrementInventoryRequest) returns (knobuk.common.v1.Empty);
+  rpc ListOrders(ListOrdersRequest) returns (ListOrdersResponse);
+  rpc GetOrder(GetOrderRequest) returns (knobuk.commerce.v1.Order);
+  rpc UpdateFulfillmentStatus(UpdateFulfillmentRequest) returns (knobuk.commerce.v1.Order);
+  rpc AdminListInventory(AdminListInventoryRequest) returns (ListInventoryResponse);
+}

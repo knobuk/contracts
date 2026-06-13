@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package knobuk.common.v1;
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/common/v1;commonv1";
+
+message Pagination {
+  int32 page = 1;
+  int32 size = 2;
+  int64 total = 3;
+  int32 total_pages = 4;
+}
+
+message ErrorDetail {
+  string field = 1;
+  string message = 2;
+}
+
+message Empty {}

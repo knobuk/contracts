@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package knobuk.payment.v1;
+
+import "knobuk/common/v1/envelope.proto";
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/payment/v1;paymentv1";
+
+message Payment {
+  string id = 1;
+  string user_id = 2;
+  string order_id = 3;
+  string subscription_id = 4;
+  string plan_id = 5;
+  string provider = 6;
+  string reference = 7;
+  double amount = 8;
+  string currency = 9;
+  string status = 10;
+  string purpose = 11;
+  string authorization_url = 12;
+  string paid_at = 13;
+  string created_at = 14;
+}
+
+message InitializePaymentRequest {
+  string user_id = 1;
+  string email = 2;
+  string order_id = 3;
+  string plan_id = 4;
+  double amount = 5;
+  string currency = 6;
+  string purpose = 7;
+}
+
+message InitializePaymentResponse {
+  Payment payment = 1;
+  string authorization_url = 2;
+  string reference = 3;
+}
+
+message VerifyPaymentRequest {
+  string reference = 1;
+}
+
+message WebhookRequest {
+  bytes payload = 1;
+  string signature = 2;
+}
+
+message GetPaymentRequest {
+  string reference = 1;
+}
+
+message ListPaymentsRequest {
+  int32 page = 1;
+  int32 size = 2;
+  string status = 3;
+  string user_id = 4;
+}
+
+message ListPaymentsResponse {
+  repeated Payment payments = 1;
+  knobuk.common.v1.Pagination pagination = 2;
+}
+
+service PaymentService {
+  rpc Initialize(InitializePaymentRequest) returns (InitializePaymentResponse);
+  rpc Verify(VerifyPaymentRequest) returns (Payment);
+  rpc HandleWebhook(WebhookRequest) returns (knobuk.common.v1.Empty);
+  rpc GetByReference(GetPaymentRequest) returns (Payment);
+  rpc List(ListPaymentsRequest) returns (ListPaymentsResponse);
+}

@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package knobuk.library.v1;
+
+import "knobuk/common/v1/envelope.proto";
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/library/v1;libraryv1";
+
+message LibraryItem {
+  string id = 1;
+  string user_id = 2;
+  string book_id = 3;
+  string access_type = 4;
+  string source_order_id = 5;
+  string expires_at = 6;
+  string book_title = 7;
+  string book_slug = 8;
+  string cover_key = 9;
+  string subscription_id = 10;
+  string access_starts_at = 11;
+  bool is_active = 12;
+  string last_opened_at = 13;
+}
+
+message Bookmark {
+  string id = 1;
+  string user_id = 2;
+  string book_id = 3;
+  string format = 4;
+  int32 position = 5;
+  string note = 6;
+  string created_at = 7;
+}
+
+message BookmarkRequest {
+  string user_id = 1;
+  string book_id = 2;
+  string format = 3;
+  int32 position = 4;
+  string note = 5;
+}
+
+message BookmarkIDRequest {
+  string user_id = 1;
+  string bookmark_id = 2;
+}
+
+message ListBookmarksRequest {
+  string user_id = 1;
+  string book_id = 2;
+}
+
+message ListBookmarksResponse {
+  repeated Bookmark bookmarks = 1;
+}
+
+message BookSummaryContent {
+  string book_id = 1;
+  string overview = 2;
+  repeated string key_lessons = 3;
+  repeated string action_points = 4;
+  repeated string quotes = 5;
+  message ChapterSummary {
+    string title = 1;
+    string summary = 2;
+  }
+  repeated ChapterSummary chapter_summaries = 6;
+  string access_level = 7;
+}
+
+message ReadingProgress {
+  string id = 1;
+  string user_id = 2;
+  string book_id = 3;
+  string format = 4;
+  int32 current_position = 5;
+  double percentage = 6;
+  string last_read_at = 7;
+}
+
+message UserBookRequest {
+  string user_id = 1;
+  string book_id = 2;
+}
+
+message GrantAccessRequest {
+  string user_id = 1;
+  string book_id = 2;
+  string order_id = 3;
+}
+
+message AccessInfoResponse {
+  bool has_access = 1;
+  LibraryItem item = 2;
+}
+
+message ListLibraryRequest {
+  string user_id = 1;
+}
+
+message ListLibraryResponse {
+  repeated LibraryItem items = 1;
+}
+
+message FileRequest {
+  string user_id = 1;
+  string book_id = 2;
+  string format = 3;
+}
+
+message FileResponse {
+  string url = 1;
+  bool preview = 2;
+  string format = 3;
+}
+
+message UpdateProgressRequest {
+  string user_id = 1;
+  string book_id = 2;
+  string format = 3;
+  int32 current_position = 4;
+  double percentage = 5;
+}
+
+service LibraryService {
+  rpc List(ListLibraryRequest) returns (ListLibraryResponse);
+  rpc AccessInfo(UserBookRequest) returns (AccessInfoResponse);
+  rpc GrantPurchasedDigital(GrantAccessRequest) returns (LibraryItem);
+  rpc GetFile(FileRequest) returns (FileResponse);
+  rpc GetSummary(UserBookRequest) returns (FileResponse);
+  rpc GetStructuredSummary(UserBookRequest) returns (BookSummaryContent);
+  rpc GetProgress(FileRequest) returns (ReadingProgress);
+  rpc UpdateProgress(UpdateProgressRequest) returns (ReadingProgress);
+  rpc ListBookmarks(ListBookmarksRequest) returns (ListBookmarksResponse);
+  rpc CreateBookmark(BookmarkRequest) returns (Bookmark);
+  rpc DeleteBookmark(BookmarkIDRequest) returns (knobuk.common.v1.Empty);
+}

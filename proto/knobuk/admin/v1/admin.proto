@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package knobuk.admin.v1;
+
+import "knobuk/author/v1/author.proto";
+import "knobuk/catalog/v1/catalog.proto";
+import "knobuk/commerce/v1/commerce.proto";
+import "knobuk/common/v1/envelope.proto";
+import "knobuk/identity/v1/identity.proto";
+import "knobuk/payment/v1/payment.proto";
+import "knobuk/subscription/v1/subscription.proto";
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/admin/v1;adminv1";
+
+message DashboardMetrics {
+  int64 total_users = 1;
+  int64 total_books = 2;
+  int64 total_authors = 3;
+  int64 total_orders = 4;
+  double total_revenue = 5;
+  int64 active_subscriptions = 6;
+  int64 pending_books = 7;
+  int64 pending_authors = 8;
+}
+
+service AdminService {
+  rpc Dashboard(knobuk.common.v1.Empty) returns (DashboardMetrics);
+}

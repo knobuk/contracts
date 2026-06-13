@@ -1,0 +1,176 @@
+syntax = "proto3";
+
+package knobuk.commerce.v1;
+
+import "knobuk/common/v1/envelope.proto";
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/commerce/v1;commercev1";
+
+message CartItem {
+  string id = 1;
+  string book_id = 2;
+  string format = 3;
+  int32 quantity = 4;
+  double unit_price = 5;
+  string book_title = 6;
+  string bookstore_id = 7;
+  string bookstore_inventory_id = 8;
+}
+
+message Cart {
+  string id = 1;
+  string user_id = 2;
+  string status = 3;
+  repeated CartItem items = 4;
+}
+
+message CartView {
+  Cart cart = 1;
+  double subtotal = 2;
+  int32 item_count = 3;
+}
+
+message AddCartItemRequest {
+  string user_id = 1;
+  string book_id = 2;
+  string format = 3;
+  int32 quantity = 4;
+  string bookstore_inventory_id = 5;
+}
+
+message UpdateCartItemRequest {
+  string user_id = 1;
+  string item_id = 2;
+  int32 quantity = 3;
+}
+
+message CartItemRequest {
+  string user_id = 1;
+  string item_id = 2;
+}
+
+message UserCartRequest {
+  string user_id = 1;
+}
+
+message OrderItem {
+  string id = 1;
+  string book_id = 2;
+  string format = 3;
+  int32 quantity = 4;
+  double unit_price = 5;
+  double total = 6;
+  string book_title = 7;
+  string bookstore_id = 8;
+  string bookstore_inventory_id = 9;
+  string fulfillment_status = 10;
+}
+
+message Order {
+  string id = 1;
+  string order_number = 2;
+  string user_id = 3;
+  double subtotal = 4;
+  double delivery_fee = 5;
+  double total = 6;
+  string status = 7;
+  string payment_status = 8;
+  string kind = 9;
+  string delivery_name = 10;
+  string delivery_phone = 11;
+  string delivery_email = 12;
+  string delivery_address = 13;
+  string delivery_city = 14;
+  string delivery_state = 15;
+  string delivery_country = 16;
+  repeated OrderItem items = 17;
+  string created_at = 18;
+}
+
+message DeliveryRequest {
+  string delivery_name = 1;
+  string delivery_phone = 2;
+  string delivery_email = 3;
+  string delivery_address = 4;
+  string delivery_city = 5;
+  string delivery_state = 6;
+  string delivery_country = 7;
+}
+
+message CheckoutHardcopyRequest {
+  string user_id = 1;
+  DeliveryRequest delivery = 2;
+}
+
+message CheckoutDigitalRequest {
+  string user_id = 1;
+  string book_id = 2;
+}
+
+message CheckoutSubscriptionRequest {
+  string user_id = 1;
+  string plan_id = 2;
+}
+
+message CheckoutResult {
+  Order order = 1;
+  string plan_id = 2;
+  string payment_reference = 3;
+  string authorization_url = 4;
+  double amount = 5;
+  string currency = 6;
+}
+
+message ListOrdersRequest {
+  string user_id = 1;
+  int32 page = 2;
+  int32 size = 3;
+  string status = 4;
+  string bookstore_id = 5;
+}
+
+message ListOrdersResponse {
+  repeated Order orders = 1;
+  knobuk.common.v1.Pagination pagination = 2;
+}
+
+message GetOrderRequest {
+  string user_id = 1;
+  string order_id = 2;
+}
+
+message UpdateOrderStatusRequest {
+  string order_id = 1;
+  string status = 2;
+}
+
+message UpdateFulfillmentRequest {
+  string order_id = 1;
+  string bookstore_id = 2;
+  string status = 3;
+}
+
+message FulfillPaymentRequest {
+  string payment_reference = 1;
+  string purpose = 2;
+  string order_id = 3;
+  string plan_id = 4;
+  string user_id = 5;
+}
+
+service CommerceService {
+  rpc GetCart(UserCartRequest) returns (CartView);
+  rpc AddCartItem(AddCartItemRequest) returns (CartView);
+  rpc UpdateCartItem(UpdateCartItemRequest) returns (CartView);
+  rpc RemoveCartItem(CartItemRequest) returns (CartView);
+  rpc ClearCart(UserCartRequest) returns (knobuk.common.v1.Empty);
+  rpc CheckoutHardcopy(CheckoutHardcopyRequest) returns (CheckoutResult);
+  rpc CheckoutDigital(CheckoutDigitalRequest) returns (CheckoutResult);
+  rpc CheckoutSubscription(CheckoutSubscriptionRequest) returns (CheckoutResult);
+  rpc FulfillPayment(FulfillPaymentRequest) returns (knobuk.common.v1.Empty);
+  rpc ListOrders(ListOrdersRequest) returns (ListOrdersResponse);
+  rpc GetOrder(GetOrderRequest) returns (Order);
+  rpc AdminListOrders(ListOrdersRequest) returns (ListOrdersResponse);
+  rpc AdminUpdateOrderStatus(UpdateOrderStatusRequest) returns (Order);
+  rpc UpdateFulfillmentStatus(UpdateFulfillmentRequest) returns (Order);
+}

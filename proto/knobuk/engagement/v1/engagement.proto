@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package knobuk.engagement.v1;
+
+import "knobuk/common/v1/envelope.proto";
+
+option go_package = "github.com/knobuk/shared/gen/go/knobuk/engagement/v1;engagementv1";
+
+message WishlistItem {
+  string id = 1;
+  string user_id = 2;
+  string book_id = 3;
+  string book_title = 4;
+  string book_slug = 5;
+  string cover_key = 6;
+}
+
+message Review {
+  string id = 1;
+  string user_id = 2;
+  string book_id = 3;
+  int32 rating = 4;
+  string comment = 5;
+  bool is_verified_purchase = 6;
+  string status = 7;
+  string user_name = 8;
+  string created_at = 9;
+}
+
+message UserBookRequest {
+  string user_id = 1;
+  string book_id = 2;
+}
+
+message ListWishlistRequest {
+  string user_id = 1;
+}
+
+message ListWishlistResponse {
+  repeated WishlistItem items = 1;
+}
+
+message ListReviewsRequest {
+  string book_id = 1;
+  int32 page = 2;
+  int32 size = 3;
+}
+
+message ListReviewsResponse {
+  repeated Review reviews = 1;
+  double average = 2;
+  int64 total_ratings = 3;
+  knobuk.common.v1.Pagination pagination = 4;
+}
+
+message CreateReviewRequest {
+  string user_id = 1;
+  string book_id = 2;
+  int32 rating = 3;
+  string comment = 4;
+}
+
+service EngagementService {
+  rpc ListWishlist(ListWishlistRequest) returns (ListWishlistResponse);
+  rpc AddWishlist(UserBookRequest) returns (WishlistItem);
+  rpc RemoveWishlist(UserBookRequest) returns (knobuk.common.v1.Empty);
+  rpc ListReviews(ListReviewsRequest) returns (ListReviewsResponse);
+  rpc CreateReview(CreateReviewRequest) returns (Review);
+}
