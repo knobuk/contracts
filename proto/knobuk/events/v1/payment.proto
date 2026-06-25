@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package knobuk.events.v1;
 
-option go_package = "github.com/knobuk/shared/gen/go/knobuk/events/v1;eventsv1";
+option go_package = "github.com/knobuk/contracts/gen/go/knobuk/events/v1;eventsv1";
 
 message PaymentFulfilled {
   string payment_reference = 1;

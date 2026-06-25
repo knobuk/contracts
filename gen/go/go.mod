@@ -1,4 +1,4 @@
-module github.com/knobuk/shared/gen/go
+module github.com/knobuk/contracts/gen/go
 
 go 1.23
 

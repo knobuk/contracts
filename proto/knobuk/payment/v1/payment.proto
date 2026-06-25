@@ -4,7 +4,7 @@ package knobuk.payment.v1;
 
 import "knobuk/common/v1/envelope.proto";
 
-option go_package = "github.com/knobuk/shared/gen/go/knobuk/payment/v1;paymentv1";
+option go_package = "github.com/knobuk/contracts/gen/go/knobuk/payment/v1;paymentv1";
 
 message Payment {
   string id = 1;

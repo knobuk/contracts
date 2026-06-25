@@ -10,7 +10,7 @@ import "knobuk/identity/v1/identity.proto";
 import "knobuk/payment/v1/payment.proto";
 import "knobuk/subscription/v1/subscription.proto";
 
-option go_package = "github.com/knobuk/shared/gen/go/knobuk/admin/v1;adminv1";
+option go_package = "github.com/knobuk/contracts/gen/go/knobuk/admin/v1;adminv1";
 
 message DashboardMetrics {
   int64 total_users = 1;

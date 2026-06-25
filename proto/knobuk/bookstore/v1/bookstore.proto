@@ -6,7 +6,7 @@ import "knobuk/catalog/v1/catalog.proto";
 import "knobuk/commerce/v1/commerce.proto";
 import "knobuk/common/v1/envelope.proto";
 
-option go_package = "github.com/knobuk/shared/gen/go/knobuk/bookstore/v1;bookstorev1";
+option go_package = "github.com/knobuk/contracts/gen/go/knobuk/bookstore/v1;bookstorev1";
 
 message Bookstore {
   string id = 1;
