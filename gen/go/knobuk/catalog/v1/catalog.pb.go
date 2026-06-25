@@ -7,7 +7,7 @@
 package catalogv1
 
 import (
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1232,8 +1232,8 @@ const file_knobuk_catalog_v1_catalog_proto_rawDesc = "" +
 	"DeleteBook\x12%.knobuk.catalog.v1.GetBookByIdRequest\x1a\x17.knobuk.common.v1.Empty\x12S\n" +
 	"\x0eDecrementStock\x12(.knobuk.catalog.v1.DecrementStockRequest\x1a\x17.knobuk.common.v1.Empty\x12W\n" +
 	"\x0eCreateCategory\x12(.knobuk.catalog.v1.CreateCategoryRequest\x1a\x1b.knobuk.catalog.v1.Category\x12W\n" +
-	"\x0eUpdateCategory\x12(.knobuk.catalog.v1.UpdateCategoryRequest\x1a\x1b.knobuk.catalog.v1.CategoryB\xc8\x01\n" +
-	"\x15com.knobuk.catalog.v1B\fCatalogProtoP\x01Z;github.com/knobuk/shared/gen/go/knobuk/catalog/v1;catalogv1\xa2\x02\x03KCX\xaa\x02\x11Knobuk.Catalog.V1\xca\x02\x11Knobuk\\Catalog\\V1\xe2\x02\x1dKnobuk\\Catalog\\V1\\GPBMetadata\xea\x02\x13Knobuk::Catalog::V1b\x06proto3"
+	"\x0eUpdateCategory\x12(.knobuk.catalog.v1.UpdateCategoryRequest\x1a\x1b.knobuk.catalog.v1.CategoryB\xcb\x01\n" +
+	"\x15com.knobuk.catalog.v1B\fCatalogProtoP\x01Z>github.com/knobuk/contracts/gen/go/knobuk/catalog/v1;catalogv1\xa2\x02\x03KCX\xaa\x02\x11Knobuk.Catalog.V1\xca\x02\x11Knobuk\\Catalog\\V1\xe2\x02\x1dKnobuk\\Catalog\\V1\\GPBMetadata\xea\x02\x13Knobuk::Catalog::V1b\x06proto3"
 
 var (
 	file_knobuk_catalog_v1_catalog_proto_rawDescOnce sync.Once

@@ -145,8 +145,8 @@ const file_knobuk_common_v1_metadata_proto_rawDesc = "" +
 	"\fTraceContext\x12\x1d\n" +
 	"\n" +
 	"request_id\x18\x01 \x01(\tR\trequestId\x12\x19\n" +
-	"\btrace_id\x18\x02 \x01(\tR\atraceIdB\xc2\x01\n" +
-	"\x14com.knobuk.common.v1B\rMetadataProtoP\x01Z9github.com/knobuk/shared/gen/go/knobuk/common/v1;commonv1\xa2\x02\x03KCX\xaa\x02\x10Knobuk.Common.V1\xca\x02\x10Knobuk\\Common\\V1\xe2\x02\x1cKnobuk\\Common\\V1\\GPBMetadata\xea\x02\x12Knobuk::Common::V1b\x06proto3"
+	"\btrace_id\x18\x02 \x01(\tR\atraceIdB\xc5\x01\n" +
+	"\x14com.knobuk.common.v1B\rMetadataProtoP\x01Z<github.com/knobuk/contracts/gen/go/knobuk/common/v1;commonv1\xa2\x02\x03KCX\xaa\x02\x10Knobuk.Common.V1\xca\x02\x10Knobuk\\Common\\V1\xe2\x02\x1cKnobuk\\Common\\V1\\GPBMetadata\xea\x02\x12Knobuk::Common::V1b\x06proto3"
 
 var (
 	file_knobuk_common_v1_metadata_proto_rawDescOnce sync.Once

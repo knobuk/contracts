@@ -7,7 +7,7 @@
 package engagementv1
 
 import (
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -602,8 +602,8 @@ const file_knobuk_engagement_v1_engagement_proto_rawDesc = "" +
 	"\vAddWishlist\x12%.knobuk.engagement.v1.UserBookRequest\x1a\".knobuk.engagement.v1.WishlistItem\x12P\n" +
 	"\x0eRemoveWishlist\x12%.knobuk.engagement.v1.UserBookRequest\x1a\x17.knobuk.common.v1.Empty\x12b\n" +
 	"\vListReviews\x12(.knobuk.engagement.v1.ListReviewsRequest\x1a).knobuk.engagement.v1.ListReviewsResponse\x12W\n" +
-	"\fCreateReview\x12).knobuk.engagement.v1.CreateReviewRequest\x1a\x1c.knobuk.engagement.v1.ReviewB\xe0\x01\n" +
-	"\x18com.knobuk.engagement.v1B\x0fEngagementProtoP\x01ZAgithub.com/knobuk/shared/gen/go/knobuk/engagement/v1;engagementv1\xa2\x02\x03KEX\xaa\x02\x14Knobuk.Engagement.V1\xca\x02\x14Knobuk\\Engagement\\V1\xe2\x02 Knobuk\\Engagement\\V1\\GPBMetadata\xea\x02\x16Knobuk::Engagement::V1b\x06proto3"
+	"\fCreateReview\x12).knobuk.engagement.v1.CreateReviewRequest\x1a\x1c.knobuk.engagement.v1.ReviewB\xe3\x01\n" +
+	"\x18com.knobuk.engagement.v1B\x0fEngagementProtoP\x01ZDgithub.com/knobuk/contracts/gen/go/knobuk/engagement/v1;engagementv1\xa2\x02\x03KEX\xaa\x02\x14Knobuk.Engagement.V1\xca\x02\x14Knobuk\\Engagement\\V1\xe2\x02 Knobuk\\Engagement\\V1\\GPBMetadata\xea\x02\x16Knobuk::Engagement::V1b\x06proto3"
 
 var (
 	file_knobuk_engagement_v1_engagement_proto_rawDescOnce sync.Once

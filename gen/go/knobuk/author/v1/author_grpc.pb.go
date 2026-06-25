@@ -8,7 +8,7 @@ package authorv1
 
 import (
 	context "context"
-	v1 "github.com/knobuk/shared/gen/go/knobuk/catalog/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/catalog/v1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

@@ -192,8 +192,8 @@ const file_knobuk_common_v1_envelope_proto_rawDesc = "" +
 	"\vErrorDetail\x12\x14\n" +
 	"\x05field\x18\x01 \x01(\tR\x05field\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\"\a\n" +
-	"\x05EmptyB\xc2\x01\n" +
-	"\x14com.knobuk.common.v1B\rEnvelopeProtoP\x01Z9github.com/knobuk/shared/gen/go/knobuk/common/v1;commonv1\xa2\x02\x03KCX\xaa\x02\x10Knobuk.Common.V1\xca\x02\x10Knobuk\\Common\\V1\xe2\x02\x1cKnobuk\\Common\\V1\\GPBMetadata\xea\x02\x12Knobuk::Common::V1b\x06proto3"
+	"\x05EmptyB\xc5\x01\n" +
+	"\x14com.knobuk.common.v1B\rEnvelopeProtoP\x01Z<github.com/knobuk/contracts/gen/go/knobuk/common/v1;commonv1\xa2\x02\x03KCX\xaa\x02\x10Knobuk.Common.V1\xca\x02\x10Knobuk\\Common\\V1\xe2\x02\x1cKnobuk\\Common\\V1\\GPBMetadata\xea\x02\x12Knobuk::Common::V1b\x06proto3"
 
 var (
 	file_knobuk_common_v1_envelope_proto_rawDescOnce sync.Once

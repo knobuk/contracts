@@ -7,7 +7,7 @@
 package paymentv1
 
 import (
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -639,8 +639,8 @@ const file_knobuk_payment_v1_payment_proto_rawDesc = "" +
 	"\x06Verify\x12'.knobuk.payment.v1.VerifyPaymentRequest\x1a\x1a.knobuk.payment.v1.Payment\x12K\n" +
 	"\rHandleWebhook\x12!.knobuk.payment.v1.WebhookRequest\x1a\x17.knobuk.common.v1.Empty\x12R\n" +
 	"\x0eGetByReference\x12$.knobuk.payment.v1.GetPaymentRequest\x1a\x1a.knobuk.payment.v1.Payment\x12W\n" +
-	"\x04List\x12&.knobuk.payment.v1.ListPaymentsRequest\x1a'.knobuk.payment.v1.ListPaymentsResponseB\xc8\x01\n" +
-	"\x15com.knobuk.payment.v1B\fPaymentProtoP\x01Z;github.com/knobuk/shared/gen/go/knobuk/payment/v1;paymentv1\xa2\x02\x03KPX\xaa\x02\x11Knobuk.Payment.V1\xca\x02\x11Knobuk\\Payment\\V1\xe2\x02\x1dKnobuk\\Payment\\V1\\GPBMetadata\xea\x02\x13Knobuk::Payment::V1b\x06proto3"
+	"\x04List\x12&.knobuk.payment.v1.ListPaymentsRequest\x1a'.knobuk.payment.v1.ListPaymentsResponseB\xcb\x01\n" +
+	"\x15com.knobuk.payment.v1B\fPaymentProtoP\x01Z>github.com/knobuk/contracts/gen/go/knobuk/payment/v1;paymentv1\xa2\x02\x03KPX\xaa\x02\x11Knobuk.Payment.V1\xca\x02\x11Knobuk\\Payment\\V1\xe2\x02\x1dKnobuk\\Payment\\V1\\GPBMetadata\xea\x02\x13Knobuk::Payment::V1b\x06proto3"
 
 var (
 	file_knobuk_payment_v1_payment_proto_rawDescOnce sync.Once

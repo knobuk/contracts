@@ -7,7 +7,7 @@
 package commercev1
 
 import (
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1621,8 +1621,8 @@ const file_knobuk_commerce_v1_commerce_proto_rawDesc = "" +
 	"\bGetOrder\x12#.knobuk.commerce.v1.GetOrderRequest\x1a\x19.knobuk.commerce.v1.Order\x12`\n" +
 	"\x0fAdminListOrders\x12%.knobuk.commerce.v1.ListOrdersRequest\x1a&.knobuk.commerce.v1.ListOrdersResponse\x12a\n" +
 	"\x16AdminUpdateOrderStatus\x12,.knobuk.commerce.v1.UpdateOrderStatusRequest\x1a\x19.knobuk.commerce.v1.Order\x12b\n" +
-	"\x17UpdateFulfillmentStatus\x12,.knobuk.commerce.v1.UpdateFulfillmentRequest\x1a\x19.knobuk.commerce.v1.OrderB\xd0\x01\n" +
-	"\x16com.knobuk.commerce.v1B\rCommerceProtoP\x01Z=github.com/knobuk/shared/gen/go/knobuk/commerce/v1;commercev1\xa2\x02\x03KCX\xaa\x02\x12Knobuk.Commerce.V1\xca\x02\x12Knobuk\\Commerce\\V1\xe2\x02\x1eKnobuk\\Commerce\\V1\\GPBMetadata\xea\x02\x14Knobuk::Commerce::V1b\x06proto3"
+	"\x17UpdateFulfillmentStatus\x12,.knobuk.commerce.v1.UpdateFulfillmentRequest\x1a\x19.knobuk.commerce.v1.OrderB\xd3\x01\n" +
+	"\x16com.knobuk.commerce.v1B\rCommerceProtoP\x01Z@github.com/knobuk/contracts/gen/go/knobuk/commerce/v1;commercev1\xa2\x02\x03KCX\xaa\x02\x12Knobuk.Commerce.V1\xca\x02\x12Knobuk\\Commerce\\V1\xe2\x02\x1eKnobuk\\Commerce\\V1\\GPBMetadata\xea\x02\x14Knobuk::Commerce::V1b\x06proto3"
 
 var (
 	file_knobuk_commerce_v1_commerce_proto_rawDescOnce sync.Once

@@ -198,8 +198,8 @@ const file_knobuk_events_v1_payment_proto_rawDesc = "" +
 	"\x0eOrderCompleted\x12\x19\n" +
 	"\border_id\x18\x01 \x01(\tR\aorderId\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x12\n" +
-	"\x04kind\x18\x03 \x01(\tR\x04kindB\xc1\x01\n" +
-	"\x14com.knobuk.events.v1B\fPaymentProtoP\x01Z9github.com/knobuk/shared/gen/go/knobuk/events/v1;eventsv1\xa2\x02\x03KEX\xaa\x02\x10Knobuk.Events.V1\xca\x02\x10Knobuk\\Events\\V1\xe2\x02\x1cKnobuk\\Events\\V1\\GPBMetadata\xea\x02\x12Knobuk::Events::V1b\x06proto3"
+	"\x04kind\x18\x03 \x01(\tR\x04kindB\xc4\x01\n" +
+	"\x14com.knobuk.events.v1B\fPaymentProtoP\x01Z<github.com/knobuk/contracts/gen/go/knobuk/events/v1;eventsv1\xa2\x02\x03KEX\xaa\x02\x10Knobuk.Events.V1\xca\x02\x10Knobuk\\Events\\V1\xe2\x02\x1cKnobuk\\Events\\V1\\GPBMetadata\xea\x02\x12Knobuk::Events::V1b\x06proto3"
 
 var (
 	file_knobuk_events_v1_payment_proto_rawDescOnce sync.Once

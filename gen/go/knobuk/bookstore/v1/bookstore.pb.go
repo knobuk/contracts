@@ -7,9 +7,9 @@
 package bookstorev1
 
 import (
-	v11 "github.com/knobuk/shared/gen/go/knobuk/catalog/v1"
-	v12 "github.com/knobuk/shared/gen/go/knobuk/commerce/v1"
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
+	v11 "github.com/knobuk/contracts/gen/go/knobuk/catalog/v1"
+	v12 "github.com/knobuk/contracts/gen/go/knobuk/commerce/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -2248,8 +2248,8 @@ const file_knobuk_bookstore_v1_bookstore_proto_rawDesc = "" +
 	"ListOrders\x12&.knobuk.bookstore.v1.ListOrdersRequest\x1a'.knobuk.bookstore.v1.ListOrdersResponse\x12K\n" +
 	"\bGetOrder\x12$.knobuk.bookstore.v1.GetOrderRequest\x1a\x19.knobuk.commerce.v1.Order\x12c\n" +
 	"\x17UpdateFulfillmentStatus\x12-.knobuk.bookstore.v1.UpdateFulfillmentRequest\x1a\x19.knobuk.commerce.v1.Order\x12p\n" +
-	"\x12AdminListInventory\x12..knobuk.bookstore.v1.AdminListInventoryRequest\x1a*.knobuk.bookstore.v1.ListInventoryResponseB\xd8\x01\n" +
-	"\x17com.knobuk.bookstore.v1B\x0eBookstoreProtoP\x01Z?github.com/knobuk/shared/gen/go/knobuk/bookstore/v1;bookstorev1\xa2\x02\x03KBX\xaa\x02\x13Knobuk.Bookstore.V1\xca\x02\x13Knobuk\\Bookstore\\V1\xe2\x02\x1fKnobuk\\Bookstore\\V1\\GPBMetadata\xea\x02\x15Knobuk::Bookstore::V1b\x06proto3"
+	"\x12AdminListInventory\x12..knobuk.bookstore.v1.AdminListInventoryRequest\x1a*.knobuk.bookstore.v1.ListInventoryResponseB\xdb\x01\n" +
+	"\x17com.knobuk.bookstore.v1B\x0eBookstoreProtoP\x01ZBgithub.com/knobuk/contracts/gen/go/knobuk/bookstore/v1;bookstorev1\xa2\x02\x03KBX\xaa\x02\x13Knobuk.Bookstore.V1\xca\x02\x13Knobuk\\Bookstore\\V1\xe2\x02\x1fKnobuk\\Bookstore\\V1\\GPBMetadata\xea\x02\x15Knobuk::Bookstore::V1b\x06proto3"
 
 var (
 	file_knobuk_bookstore_v1_bookstore_proto_rawDescOnce sync.Once

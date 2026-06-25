@@ -7,8 +7,8 @@
 package authorv1
 
 import (
-	v11 "github.com/knobuk/shared/gen/go/knobuk/catalog/v1"
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
+	v11 "github.com/knobuk/contracts/gen/go/knobuk/catalog/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -817,8 +817,8 @@ const file_knobuk_author_v1_author_proto_rawDesc = "" +
 	"\n" +
 	"UpdateBook\x12).knobuk.author.v1.UpdateAuthorBookRequest\x1a\x17.knobuk.catalog.v1.Book\x12J\n" +
 	"\n" +
-	"SubmitBook\x12#.knobuk.author.v1.SubmitBookRequest\x1a\x17.knobuk.catalog.v1.BookB\xc0\x01\n" +
-	"\x14com.knobuk.author.v1B\vAuthorProtoP\x01Z9github.com/knobuk/shared/gen/go/knobuk/author/v1;authorv1\xa2\x02\x03KAX\xaa\x02\x10Knobuk.Author.V1\xca\x02\x10Knobuk\\Author\\V1\xe2\x02\x1cKnobuk\\Author\\V1\\GPBMetadata\xea\x02\x12Knobuk::Author::V1b\x06proto3"
+	"SubmitBook\x12#.knobuk.author.v1.SubmitBookRequest\x1a\x17.knobuk.catalog.v1.BookB\xc3\x01\n" +
+	"\x14com.knobuk.author.v1B\vAuthorProtoP\x01Z<github.com/knobuk/contracts/gen/go/knobuk/author/v1;authorv1\xa2\x02\x03KAX\xaa\x02\x10Knobuk.Author.V1\xca\x02\x10Knobuk\\Author\\V1\xe2\x02\x1cKnobuk\\Author\\V1\\GPBMetadata\xea\x02\x12Knobuk::Author::V1b\x06proto3"
 
 var (
 	file_knobuk_author_v1_author_proto_rawDescOnce sync.Once

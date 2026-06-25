@@ -29,7 +29,7 @@ buf generate
 
 Tag releases (`v0.1.0`, `v0.2.0`). Services pin a tag in production.
 
-Go module: `github.com/knobuk/shared/gen/go` (generated import path).
+Go module: `github.com/knobuk/contracts/gen/go` (generated import path).
 
 ## Local path
 

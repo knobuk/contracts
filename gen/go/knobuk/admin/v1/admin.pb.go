@@ -7,13 +7,13 @@
 package adminv1
 
 import (
-	_ "github.com/knobuk/shared/gen/go/knobuk/author/v1"
-	_ "github.com/knobuk/shared/gen/go/knobuk/catalog/v1"
-	_ "github.com/knobuk/shared/gen/go/knobuk/commerce/v1"
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
-	_ "github.com/knobuk/shared/gen/go/knobuk/identity/v1"
-	_ "github.com/knobuk/shared/gen/go/knobuk/payment/v1"
-	_ "github.com/knobuk/shared/gen/go/knobuk/subscription/v1"
+	_ "github.com/knobuk/contracts/gen/go/knobuk/author/v1"
+	_ "github.com/knobuk/contracts/gen/go/knobuk/catalog/v1"
+	_ "github.com/knobuk/contracts/gen/go/knobuk/commerce/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
+	_ "github.com/knobuk/contracts/gen/go/knobuk/identity/v1"
+	_ "github.com/knobuk/contracts/gen/go/knobuk/payment/v1"
+	_ "github.com/knobuk/contracts/gen/go/knobuk/subscription/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -145,9 +145,9 @@ const file_knobuk_admin_v1_admin_proto_rawDesc = "" +
 	"\rpending_books\x18\a \x01(\x03R\fpendingBooks\x12'\n" +
 	"\x0fpending_authors\x18\b \x01(\x03R\x0ependingAuthors2W\n" +
 	"\fAdminService\x12G\n" +
-	"\tDashboard\x12\x17.knobuk.common.v1.Empty\x1a!.knobuk.admin.v1.DashboardMetricsB\xb8\x01\n" +
+	"\tDashboard\x12\x17.knobuk.common.v1.Empty\x1a!.knobuk.admin.v1.DashboardMetricsB\xbb\x01\n" +
 	"\x13com.knobuk.admin.v1B\n" +
-	"AdminProtoP\x01Z7github.com/knobuk/shared/gen/go/knobuk/admin/v1;adminv1\xa2\x02\x03KAX\xaa\x02\x0fKnobuk.Admin.V1\xca\x02\x0fKnobuk\\Admin\\V1\xe2\x02\x1bKnobuk\\Admin\\V1\\GPBMetadata\xea\x02\x11Knobuk::Admin::V1b\x06proto3"
+	"AdminProtoP\x01Z:github.com/knobuk/contracts/gen/go/knobuk/admin/v1;adminv1\xa2\x02\x03KAX\xaa\x02\x0fKnobuk.Admin.V1\xca\x02\x0fKnobuk\\Admin\\V1\xe2\x02\x1bKnobuk\\Admin\\V1\\GPBMetadata\xea\x02\x11Knobuk::Admin::V1b\x06proto3"
 
 var (
 	file_knobuk_admin_v1_admin_proto_rawDescOnce sync.Once

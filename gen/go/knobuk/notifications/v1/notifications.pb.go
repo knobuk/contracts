@@ -7,7 +7,7 @@
 package notificationsv1
 
 import (
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -500,8 +500,8 @@ const file_knobuk_notifications_v1_notifications_proto_rawDesc = "" +
 	"\x13NotificationService\x12W\n" +
 	"\x06Create\x12&.knobuk.notifications.v1.CreateRequest\x1a%.knobuk.notifications.v1.Notification\x12S\n" +
 	"\x04List\x12$.knobuk.notifications.v1.ListRequest\x1a%.knobuk.notifications.v1.ListResponse\x12[\n" +
-	"\bMarkRead\x12(.knobuk.notifications.v1.MarkReadRequest\x1a%.knobuk.notifications.v1.NotificationB\xf8\x01\n" +
-	"\x1bcom.knobuk.notifications.v1B\x12NotificationsProtoP\x01ZGgithub.com/knobuk/shared/gen/go/knobuk/notifications/v1;notificationsv1\xa2\x02\x03KNX\xaa\x02\x17Knobuk.Notifications.V1\xca\x02\x17Knobuk\\Notifications\\V1\xe2\x02#Knobuk\\Notifications\\V1\\GPBMetadata\xea\x02\x19Knobuk::Notifications::V1b\x06proto3"
+	"\bMarkRead\x12(.knobuk.notifications.v1.MarkReadRequest\x1a%.knobuk.notifications.v1.NotificationB\xfb\x01\n" +
+	"\x1bcom.knobuk.notifications.v1B\x12NotificationsProtoP\x01ZJgithub.com/knobuk/contracts/gen/go/knobuk/notifications/v1;notificationsv1\xa2\x02\x03KNX\xaa\x02\x17Knobuk.Notifications.V1\xca\x02\x17Knobuk\\Notifications\\V1\xe2\x02#Knobuk\\Notifications\\V1\\GPBMetadata\xea\x02\x19Knobuk::Notifications::V1b\x06proto3"
 
 var (
 	file_knobuk_notifications_v1_notifications_proto_rawDescOnce sync.Once

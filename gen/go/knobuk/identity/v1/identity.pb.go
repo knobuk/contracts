@@ -7,7 +7,7 @@
 package identityv1
 
 import (
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1189,8 +1189,8 @@ const file_knobuk_identity_v1_identity_proto_rawDesc = "" +
 	"\x10UpdateUserStatus\x12+.knobuk.identity.v1.UpdateUserStatusRequest\x1a\x18.knobuk.identity.v1.User\x12L\n" +
 	"\n" +
 	"AssignRole\x12%.knobuk.identity.v1.AssignRoleRequest\x1a\x17.knobuk.common.v1.Empty\x12d\n" +
-	"\rValidateToken\x12(.knobuk.identity.v1.ValidateTokenRequest\x1a).knobuk.identity.v1.ValidateTokenResponseB\xd0\x01\n" +
-	"\x16com.knobuk.identity.v1B\rIdentityProtoP\x01Z=github.com/knobuk/shared/gen/go/knobuk/identity/v1;identityv1\xa2\x02\x03KIX\xaa\x02\x12Knobuk.Identity.V1\xca\x02\x12Knobuk\\Identity\\V1\xe2\x02\x1eKnobuk\\Identity\\V1\\GPBMetadata\xea\x02\x14Knobuk::Identity::V1b\x06proto3"
+	"\rValidateToken\x12(.knobuk.identity.v1.ValidateTokenRequest\x1a).knobuk.identity.v1.ValidateTokenResponseB\xd3\x01\n" +
+	"\x16com.knobuk.identity.v1B\rIdentityProtoP\x01Z@github.com/knobuk/contracts/gen/go/knobuk/identity/v1;identityv1\xa2\x02\x03KIX\xaa\x02\x12Knobuk.Identity.V1\xca\x02\x12Knobuk\\Identity\\V1\xe2\x02\x1eKnobuk\\Identity\\V1\\GPBMetadata\xea\x02\x14Knobuk::Identity::V1b\x06proto3"
 
 var (
 	file_knobuk_identity_v1_identity_proto_rawDescOnce sync.Once

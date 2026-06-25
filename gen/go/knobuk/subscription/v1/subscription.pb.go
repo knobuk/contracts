@@ -7,7 +7,7 @@
 package subscriptionv1
 
 import (
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -670,8 +670,8 @@ const file_knobuk_subscription_v1_subscription_proto_rawDesc = "" +
 	"\bActivate\x12'.knobuk.subscription.v1.ActivateRequest\x1a(.knobuk.subscription.v1.UserSubscription\x12[\n" +
 	"\tHasActive\x12#.knobuk.subscription.v1.UserRequest\x1a).knobuk.subscription.v1.HasActiveResponse\x12M\n" +
 	"\x02Me\x12#.knobuk.subscription.v1.UserRequest\x1a\".knobuk.subscription.v1.MeResponse\x12p\n" +
-	"\tAdminList\x120.knobuk.subscription.v1.ListSubscriptionsRequest\x1a1.knobuk.subscription.v1.ListSubscriptionsResponseB\xf0\x01\n" +
-	"\x1acom.knobuk.subscription.v1B\x11SubscriptionProtoP\x01ZEgithub.com/knobuk/shared/gen/go/knobuk/subscription/v1;subscriptionv1\xa2\x02\x03KSX\xaa\x02\x16Knobuk.Subscription.V1\xca\x02\x16Knobuk\\Subscription\\V1\xe2\x02\"Knobuk\\Subscription\\V1\\GPBMetadata\xea\x02\x18Knobuk::Subscription::V1b\x06proto3"
+	"\tAdminList\x120.knobuk.subscription.v1.ListSubscriptionsRequest\x1a1.knobuk.subscription.v1.ListSubscriptionsResponseB\xf3\x01\n" +
+	"\x1acom.knobuk.subscription.v1B\x11SubscriptionProtoP\x01ZHgithub.com/knobuk/contracts/gen/go/knobuk/subscription/v1;subscriptionv1\xa2\x02\x03KSX\xaa\x02\x16Knobuk.Subscription.V1\xca\x02\x16Knobuk\\Subscription\\V1\xe2\x02\"Knobuk\\Subscription\\V1\\GPBMetadata\xea\x02\x18Knobuk::Subscription::V1b\x06proto3"
 
 var (
 	file_knobuk_subscription_v1_subscription_proto_rawDescOnce sync.Once

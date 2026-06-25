@@ -7,7 +7,7 @@
 package libraryv1
 
 import (
-	v1 "github.com/knobuk/shared/gen/go/knobuk/common/v1"
+	v1 "github.com/knobuk/contracts/gen/go/knobuk/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1276,8 +1276,8 @@ const file_knobuk_library_v1_library_proto_rawDesc = "" +
 	"\x0eUpdateProgress\x12(.knobuk.library.v1.UpdateProgressRequest\x1a\".knobuk.library.v1.ReadingProgress\x12b\n" +
 	"\rListBookmarks\x12'.knobuk.library.v1.ListBookmarksRequest\x1a(.knobuk.library.v1.ListBookmarksResponse\x12Q\n" +
 	"\x0eCreateBookmark\x12\".knobuk.library.v1.BookmarkRequest\x1a\x1b.knobuk.library.v1.Bookmark\x12O\n" +
-	"\x0eDeleteBookmark\x12$.knobuk.library.v1.BookmarkIDRequest\x1a\x17.knobuk.common.v1.EmptyB\xc8\x01\n" +
-	"\x15com.knobuk.library.v1B\fLibraryProtoP\x01Z;github.com/knobuk/shared/gen/go/knobuk/library/v1;libraryv1\xa2\x02\x03KLX\xaa\x02\x11Knobuk.Library.V1\xca\x02\x11Knobuk\\Library\\V1\xe2\x02\x1dKnobuk\\Library\\V1\\GPBMetadata\xea\x02\x13Knobuk::Library::V1b\x06proto3"
+	"\x0eDeleteBookmark\x12$.knobuk.library.v1.BookmarkIDRequest\x1a\x17.knobuk.common.v1.EmptyB\xcb\x01\n" +
+	"\x15com.knobuk.library.v1B\fLibraryProtoP\x01Z>github.com/knobuk/contracts/gen/go/knobuk/library/v1;libraryv1\xa2\x02\x03KLX\xaa\x02\x11Knobuk.Library.V1\xca\x02\x11Knobuk\\Library\\V1\xe2\x02\x1dKnobuk\\Library\\V1\\GPBMetadata\xea\x02\x13Knobuk::Library::V1b\x06proto3"
 
 var (
 	file_knobuk_library_v1_library_proto_rawDescOnce sync.Once
